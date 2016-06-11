@@ -88,16 +88,25 @@ def main():
     race_titles = soup.find_all('h3', class_='pull-left')
     race_dictionaries = [(r['id'], points_for_race(r)) for r in race_titles]
 
-    def get_totals(n):
-        dictionaries = [d for _, d in race_dictionaries]
-        return (sum(p[n][0] for p in dictionaries),
-                sum(p[n][1] for p in dictionaries),
-                sum(p[n][2] for p in dictionaries))
-
-    totals_dictionary = ('totals', { n: get_totals(n) for n in player_names })
+    # For each player create a list of qualifying and race scores so that I can
+    # easily produce the summation tables, such as total, variance max, min, sd.
+    point_lists = { player: ([d[player][0] for _n, d in race_dictionaries],
+                             [d[player][1] for _n, d in race_dictionaries],
+                             [d[player][2] for _n, d in race_dictionaries])
+                    for player in player_names }
+                             
     
-    race_dictionaries.append(totals_dictionary)
+    def summation_rows(row_name, sum_function):
+        def get_summations(player):
+            return (sum_function(point_lists[player][0]),
+                    sum_function(point_lists[player][1]),
+                    sum_function(point_lists[player][2]))
+        return (row_name, {n: get_summations(n) for n in player_names})
 
+    race_dictionaries.append(summation_rows('minimum', min))
+    race_dictionaries.append(summation_rows('maximum', max))
+    race_dictionaries.append(summation_rows('totals', sum))
+    
     tables = []
     
     def make_column_table(name, column):
