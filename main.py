@@ -36,18 +36,35 @@ def download_if_stale(filepath, fileurl):
             print('The {0} is not reachable'.format(fileurl))
 
 html_template = """
-<!DOCTYPE>
+<!DOCTYPE html>
 <html>
 <head>
 <title>Guess the Grid Statistics</title>
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/picnicss/6.0.0/picnic.min.css" crossorigin="anonymous">
-
+ <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
 {}
 </body>
 </html>
 """
+
+def create_graph_javascript(container_name, traces):
+    graph_javascript_template = """
+      <script>
+      {}
+    var data = [ trace_tomato_plan, trace_jdanielp, trace_Seneska ];
+    
+    var layout = {{
+      title:'Adding Names to Line and Scatter Plot',
+      height: 400,
+      width: 480
+    }};
+    
+    Plotly.newPlot('{}', data, layout);
+      </script>
+"""
+    return graph_javascript_template.format(traces, container_name)
 
 def make_tag(name, contents):
     return "<{}>{}</{}>".format(name, contents, name)
@@ -127,6 +144,37 @@ def main():
     race_dictionaries.append(summation_rows('standard deviation', standard_deviation))
     race_dictionaries.append(summation_rows('totals', sum))
     
+    def cumulation(numbers):
+        result = []
+        total = 0
+        for number in numbers:
+            total += number
+            result.append(total)
+        return result
+    
+    _name, cumulative_rows = summation_rows('cumulative', cumulation)
+    race_names = [r['id'] for r in race_titles]
+    x_of_trace = "x: {}".format(str(race_names))
+    def get_trace(index, player_name):
+        y_of_trace = cumulative_rows[player_name][index]
+        return """var trace_{} = {{
+  {},
+  y: {},
+  mode: 'lines+markers',
+  name: '{}'
+}};""".format(player_name, x_of_trace, y_of_trace, player_name)
+
+
+    def make_graph(name, index):
+        graph_traces = "{}{}{}".format(get_trace(index, 'tomato_plan'),
+                                       get_trace(index, 'jdanielp'),
+                                       get_trace(index, 'Seneska'))
+        container_name = "{}_graph_container".format(name)
+        javascript = create_graph_javascript(container_name, graph_traces)
+        html = """<div id="{}" style="width: 480px; height: 400px;">
+                  </div>""".format(container_name)
+        return "\n".join([html, javascript])
+    
     tables = []
     
     def make_column_table(name, column):
@@ -146,8 +194,10 @@ def main():
 
     for n,c in [('Qualification', 0), ('Race', 1), ('Weekend', 2)]:
         tables.append(make_column_table(n,c))
+        tables.append(make_graph(n, c))
 
-    html = html_template.format("\n".join(tables))
+    tables_html = "\n".join(tables)
+    html = html_template.format(tables_html)
     with open('index.html', 'w') as output_file:
         output_file.write(html)
 
