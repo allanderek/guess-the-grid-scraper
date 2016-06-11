@@ -146,7 +146,7 @@ def main():
         tables.append(make_column_table(n,c))
 
     html = html_template.format("\n".join(tables))
-    with open('result.html', 'w') as output_file:
+    with open('index.html', 'w') as output_file:
         output_file.write(html)
     
 
