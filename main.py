@@ -40,6 +40,8 @@ html_template = """
 <html>
 <head>
 <title>Guess the Grid Statistics</title>
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/picnicss/6.0.0/picnic.min.css" crossorigin="anonymous">
+
 </head>
 <body>
 {}
@@ -148,7 +150,7 @@ def main():
     html = html_template.format("\n".join(tables))
     with open('index.html', 'w') as output_file:
         output_file.write(html)
-    
+
 
 if __name__ == '__main__':
     main()
