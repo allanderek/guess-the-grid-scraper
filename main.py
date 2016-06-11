@@ -130,9 +130,14 @@ def main():
     def make_column_table(name, column):
         headers = ['Race', 'Allan', 'Dan', 'Charlotte']
         def make_row(name, race_dictionary):
-            return [name, race_dictionary['tomato_plan'][column],
-                          race_dictionary['jdanielp'][column],
-                          race_dictionary['Seneska'][column]]
+            def format_number(number):
+                if isinstance(number, float):
+                    return "{:03.2f}".format(number)
+                else:
+                    return number
+            return [name, format_number(race_dictionary['tomato_plan'][column]),
+                          format_number(race_dictionary['jdanielp'][column]),
+                          format_number(race_dictionary['Seneska'][column])]
         rows = [make_row(n,d) for n,d in race_dictionaries]
         table = create_table(headers, rows)
         return make_tag('h2', name) + table
