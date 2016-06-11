@@ -2,6 +2,7 @@ import datetime
 import urllib.error
 import urllib.request
 import os
+import math
 
 from bs4 import BeautifulSoup
 import jinja2
@@ -103,8 +104,25 @@ def main():
                     sum_function(point_lists[player][2]))
         return (row_name, {n: get_summations(n) for n in player_names})
 
+
+    def get_average(numbers):
+        return sum(numbers) / float(len(numbers))
+
+    def variance(numbers):
+        numbers = [float(n) for n in numbers]
+        mean = get_average(numbers)
+        differences = [mean - n for n in numbers]
+        squared_differences = [d*d for d in differences]
+        avg_squared_differences = get_average(squared_differences)
+        return avg_squared_differences
+
+    def standard_deviation(numbers):
+        return math.sqrt(variance(numbers))
+
     race_dictionaries.append(summation_rows('minimum', min))
     race_dictionaries.append(summation_rows('maximum', max))
+    race_dictionaries.append(summation_rows('variance', variance))
+    race_dictionaries.append(summation_rows('standard deviation', standard_deviation))
     race_dictionaries.append(summation_rows('totals', sum))
     
     tables = []
