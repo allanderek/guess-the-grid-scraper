@@ -7,24 +7,24 @@
  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
-<h2>Qualification</h2><table><tr><th>Race</th><th>Allan</th><th>Dan</th><th>Charlotte</th></tr><tr><td>australia</td><td>27</td><td>20</td><td>20</td></tr><tr><td>bahrain</td><td>22</td><td>20</td><td>17</td></tr><tr><td>china</td><td>17</td><td>17</td><td>13</td></tr><tr><td>russia</td><td>15</td><td>21</td><td>17</td></tr><tr><td>spain</td><td>16</td><td>16</td><td>15</td></tr><tr><td>monaco</td><td>27</td><td>18</td><td>14</td></tr><tr><td>minimum</td><td>15</td><td>16</td><td>13</td></tr><tr><td>maximum</td><td>27</td><td>21</td><td>20</td></tr><tr><td>variance</td><td>24.89</td><td>3.22</td><td>5.33</td></tr><tr><td>standard deviation</td><td>4.99</td><td>1.80</td><td>2.31</td></tr><tr><td>totals</td><td>124</td><td>112</td><td>96</td></tr></table>
+<h2>Qualification</h2><table><tr><th>Race</th><th>Allan</th><th>Dan</th><th>Charlotte</th></tr><tr><td>australia</td><td>27</td><td>20</td><td>20</td></tr><tr><td>bahrain</td><td>22</td><td>20</td><td>17</td></tr><tr><td>china</td><td>17</td><td>17</td><td>13</td></tr><tr><td>russia</td><td>15</td><td>21</td><td>17</td></tr><tr><td>spain</td><td>16</td><td>16</td><td>15</td></tr><tr><td>monaco</td><td>27</td><td>18</td><td>14</td></tr><tr><td>canada</td><td>30</td><td>20</td><td>29</td></tr><tr><td>minimum</td><td>15</td><td>16</td><td>13</td></tr><tr><td>maximum</td><td>30</td><td>21</td><td>29</td></tr><tr><td>variance</td><td>32.00</td><td>2.98</td><td>25.27</td></tr><tr><td>standard deviation</td><td>5.66</td><td>1.73</td><td>5.03</td></tr><tr><td>totals</td><td>154</td><td>132</td><td>125</td></tr></table>
 <div id="Qualification_graph_container" style="width: 480px; height: 400px;">
                   </div>
 
       <script>
       var trace_tomato_plan = {
-  x: ['australia', 'bahrain', 'china', 'russia', 'spain', 'monaco'],
-  y: [27, 49, 66, 81, 97, 124],
+  x: ['australia', 'bahrain', 'china', 'russia', 'spain', 'monaco', 'canada'],
+  y: [27, 49, 66, 81, 97, 124, 154],
   mode: 'lines+markers',
   name: 'tomato_plan'
 };var trace_jdanielp = {
-  x: ['australia', 'bahrain', 'china', 'russia', 'spain', 'monaco'],
-  y: [20, 40, 57, 78, 94, 112],
+  x: ['australia', 'bahrain', 'china', 'russia', 'spain', 'monaco', 'canada'],
+  y: [20, 40, 57, 78, 94, 112, 132],
   mode: 'lines+markers',
   name: 'jdanielp'
 };var trace_Seneska = {
-  x: ['australia', 'bahrain', 'china', 'russia', 'spain', 'monaco'],
-  y: [20, 37, 50, 67, 82, 96],
+  x: ['australia', 'bahrain', 'china', 'russia', 'spain', 'monaco', 'canada'],
+  y: [20, 37, 50, 67, 82, 96, 125],
   mode: 'lines+markers',
   name: 'Seneska'
 };
@@ -39,24 +39,24 @@
     Plotly.newPlot('Qualification_graph_container', data, layout);
       </script>
 
-<h2>Race</h2><table><tr><th>Race</th><th>Allan</th><th>Dan</th><th>Charlotte</th></tr><tr><td>australia</td><td>13</td><td>11</td><td>15</td></tr><tr><td>bahrain</td><td>8</td><td>10</td><td>16</td></tr><tr><td>china</td><td>17</td><td>17</td><td>18</td></tr><tr><td>russia</td><td>12</td><td>15</td><td>15</td></tr><tr><td>spain</td><td>8</td><td>14</td><td>9</td></tr><tr><td>monaco</td><td>12</td><td>21</td><td>11</td></tr><tr><td>minimum</td><td>8</td><td>10</td><td>9</td></tr><tr><td>maximum</td><td>17</td><td>21</td><td>18</td></tr><tr><td>variance</td><td>9.56</td><td>13.56</td><td>9.33</td></tr><tr><td>standard deviation</td><td>3.09</td><td>3.68</td><td>3.06</td></tr><tr><td>totals</td><td>70</td><td>88</td><td>84</td></tr></table>
+<h2>Race</h2><table><tr><th>Race</th><th>Allan</th><th>Dan</th><th>Charlotte</th></tr><tr><td>australia</td><td>13</td><td>11</td><td>15</td></tr><tr><td>bahrain</td><td>8</td><td>10</td><td>16</td></tr><tr><td>china</td><td>17</td><td>17</td><td>18</td></tr><tr><td>russia</td><td>12</td><td>15</td><td>15</td></tr><tr><td>spain</td><td>8</td><td>14</td><td>9</td></tr><tr><td>monaco</td><td>12</td><td>21</td><td>11</td></tr><tr><td>canada</td><td>18</td><td>21</td><td>16</td></tr><tr><td>minimum</td><td>8</td><td>10</td><td>9</td></tr><tr><td>maximum</td><td>18</td><td>21</td><td>18</td></tr><tr><td>variance</td><td>13.10</td><td>16.53</td><td>8.49</td></tr><tr><td>standard deviation</td><td>3.62</td><td>4.07</td><td>2.91</td></tr><tr><td>totals</td><td>88</td><td>109</td><td>100</td></tr></table>
 <div id="Race_graph_container" style="width: 480px; height: 400px;">
                   </div>
 
       <script>
       var trace_tomato_plan = {
-  x: ['australia', 'bahrain', 'china', 'russia', 'spain', 'monaco'],
-  y: [13, 21, 38, 50, 58, 70],
+  x: ['australia', 'bahrain', 'china', 'russia', 'spain', 'monaco', 'canada'],
+  y: [13, 21, 38, 50, 58, 70, 88],
   mode: 'lines+markers',
   name: 'tomato_plan'
 };var trace_jdanielp = {
-  x: ['australia', 'bahrain', 'china', 'russia', 'spain', 'monaco'],
-  y: [11, 21, 38, 53, 67, 88],
+  x: ['australia', 'bahrain', 'china', 'russia', 'spain', 'monaco', 'canada'],
+  y: [11, 21, 38, 53, 67, 88, 109],
   mode: 'lines+markers',
   name: 'jdanielp'
 };var trace_Seneska = {
-  x: ['australia', 'bahrain', 'china', 'russia', 'spain', 'monaco'],
-  y: [15, 31, 49, 64, 73, 84],
+  x: ['australia', 'bahrain', 'china', 'russia', 'spain', 'monaco', 'canada'],
+  y: [15, 31, 49, 64, 73, 84, 100],
   mode: 'lines+markers',
   name: 'Seneska'
 };
@@ -71,24 +71,24 @@
     Plotly.newPlot('Race_graph_container', data, layout);
       </script>
 
-<h2>Weekend</h2><table><tr><th>Race</th><th>Allan</th><th>Dan</th><th>Charlotte</th></tr><tr><td>australia</td><td>40</td><td>31</td><td>35</td></tr><tr><td>bahrain</td><td>30</td><td>30</td><td>33</td></tr><tr><td>china</td><td>34</td><td>34</td><td>31</td></tr><tr><td>russia</td><td>27</td><td>36</td><td>32</td></tr><tr><td>spain</td><td>24</td><td>30</td><td>24</td></tr><tr><td>monaco</td><td>39</td><td>39</td><td>25</td></tr><tr><td>minimum</td><td>24</td><td>30</td><td>24</td></tr><tr><td>maximum</td><td>40</td><td>39</td><td>35</td></tr><tr><td>variance</td><td>34.89</td><td>11.22</td><td>16.67</td></tr><tr><td>standard deviation</td><td>5.91</td><td>3.35</td><td>4.08</td></tr><tr><td>totals</td><td>194</td><td>200</td><td>180</td></tr></table>
+<h2>Weekend</h2><table><tr><th>Race</th><th>Allan</th><th>Dan</th><th>Charlotte</th></tr><tr><td>australia</td><td>40</td><td>31</td><td>35</td></tr><tr><td>bahrain</td><td>30</td><td>30</td><td>33</td></tr><tr><td>china</td><td>34</td><td>34</td><td>31</td></tr><tr><td>russia</td><td>27</td><td>36</td><td>32</td></tr><tr><td>spain</td><td>24</td><td>30</td><td>24</td></tr><tr><td>monaco</td><td>39</td><td>39</td><td>25</td></tr><tr><td>canada</td><td>48</td><td>41</td><td>45</td></tr><tr><td>minimum</td><td>24</td><td>30</td><td>24</td></tr><tr><td>maximum</td><td>48</td><td>41</td><td>45</td></tr><tr><td>variance</td><td>59.96</td><td>16.82</td><td>41.84</td></tr><tr><td>standard deviation</td><td>7.74</td><td>4.10</td><td>6.47</td></tr><tr><td>totals</td><td>242</td><td>241</td><td>225</td></tr></table>
 <div id="Weekend_graph_container" style="width: 480px; height: 400px;">
                   </div>
 
       <script>
       var trace_tomato_plan = {
-  x: ['australia', 'bahrain', 'china', 'russia', 'spain', 'monaco'],
-  y: [40, 70, 104, 131, 155, 194],
+  x: ['australia', 'bahrain', 'china', 'russia', 'spain', 'monaco', 'canada'],
+  y: [40, 70, 104, 131, 155, 194, 242],
   mode: 'lines+markers',
   name: 'tomato_plan'
 };var trace_jdanielp = {
-  x: ['australia', 'bahrain', 'china', 'russia', 'spain', 'monaco'],
-  y: [31, 61, 95, 131, 161, 200],
+  x: ['australia', 'bahrain', 'china', 'russia', 'spain', 'monaco', 'canada'],
+  y: [31, 61, 95, 131, 161, 200, 241],
   mode: 'lines+markers',
   name: 'jdanielp'
 };var trace_Seneska = {
-  x: ['australia', 'bahrain', 'china', 'russia', 'spain', 'monaco'],
-  y: [35, 68, 99, 131, 155, 180],
+  x: ['australia', 'bahrain', 'china', 'russia', 'spain', 'monaco', 'canada'],
+  y: [35, 68, 99, 131, 155, 180, 225],
   mode: 'lines+markers',
   name: 'Seneska'
 };
