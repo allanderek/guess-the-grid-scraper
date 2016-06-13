@@ -49,14 +49,14 @@ html_template = """
 </html>
 """
 
-def create_graph_javascript(container_name, traces):
+def create_graph_javascript(container_name, title, traces):
     graph_javascript_template = """
       <script>
       {}
     var data = [ trace_tomato_plan, trace_jdanielp, trace_Seneska ];
     
     var layout = {{
-      title:'Adding Names to Line and Scatter Plot',
+      title:'{}',
       height: 400,
       width: 480
     }};
@@ -64,7 +64,7 @@ def create_graph_javascript(container_name, traces):
     Plotly.newPlot('{}', data, layout);
       </script>
 """
-    return graph_javascript_template.format(traces, container_name)
+    return graph_javascript_template.format(traces, title, container_name)
 
 def make_tag(name, contents):
     return "<{}>{}</{}>".format(name, contents, name)
@@ -170,7 +170,8 @@ def main():
                                        get_trace(index, 'jdanielp'),
                                        get_trace(index, 'Seneska'))
         container_name = "{}_graph_container".format(name)
-        javascript = create_graph_javascript(container_name, graph_traces)
+        title = "{} points graph".format(name)
+        javascript = create_graph_javascript(container_name, title, graph_traces)
         html = """<div id="{}" style="width: 480px; height: 400px;">
                   </div>""".format(container_name)
         return "\n".join([html, javascript])
