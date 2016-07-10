@@ -179,7 +179,7 @@ def main():
     tables = []
     
     def make_column_table(name, column):
-        headers = ['Race', 'Allan', 'Dan', 'Charlotte']
+        headers = ['Location', 'Allan', 'Dan', 'Charlotte']
         def make_row(name, race_dictionary):
             def format_number(number):
                 if isinstance(number, float):
