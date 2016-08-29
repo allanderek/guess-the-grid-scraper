@@ -7,24 +7,24 @@
  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
-<h2>Qualification</h2><table><tr><th>Location</th><th>Allan</th><th>Dan</th><th>Charlotte</th></tr><tr><td>australia</td><td>27</td><td>20</td><td>20</td></tr><tr><td>bahrain</td><td>22</td><td>20</td><td>17</td></tr><tr><td>china</td><td>17</td><td>17</td><td>13</td></tr><tr><td>russia</td><td>15</td><td>21</td><td>17</td></tr><tr><td>spain</td><td>16</td><td>16</td><td>15</td></tr><tr><td>monaco</td><td>27</td><td>18</td><td>14</td></tr><tr><td>canada</td><td>30</td><td>20</td><td>29</td></tr><tr><td>azerbaijan</td><td>11</td><td>13</td><td>16</td></tr><tr><td>austria</td><td>16</td><td>14</td><td>18</td></tr><tr><td>great-britain</td><td>20</td><td>26</td><td>20</td></tr><tr><td>hungary</td><td>22</td><td>17</td><td>12</td></tr><tr><td>germany</td><td>17</td><td>23</td><td>23</td></tr><tr><td>minimum</td><td>11</td><td>13</td><td>12</td></tr><tr><td>maximum</td><td>30</td><td>26</td><td>29</td></tr><tr><td>variance</td><td>30.17</td><td>12.52</td><td>20.47</td></tr><tr><td>standard deviation</td><td>5.49</td><td>3.54</td><td>4.52</td></tr><tr><td>totals</td><td>240</td><td>225</td><td>214</td></tr></table>
+<h2>Qualification</h2><table><tr><th>Location</th><th>Allan</th><th>Dan</th><th>Charlotte</th></tr><tr><td>australia</td><td>27</td><td>20</td><td>20</td></tr><tr><td>bahrain</td><td>22</td><td>20</td><td>17</td></tr><tr><td>china</td><td>17</td><td>17</td><td>13</td></tr><tr><td>russia</td><td>15</td><td>21</td><td>17</td></tr><tr><td>spain</td><td>16</td><td>16</td><td>15</td></tr><tr><td>monaco</td><td>27</td><td>18</td><td>14</td></tr><tr><td>canada</td><td>30</td><td>20</td><td>29</td></tr><tr><td>azerbaijan</td><td>11</td><td>13</td><td>16</td></tr><tr><td>austria</td><td>16</td><td>14</td><td>18</td></tr><tr><td>great-britain</td><td>20</td><td>26</td><td>20</td></tr><tr><td>hungary</td><td>22</td><td>17</td><td>12</td></tr><tr><td>germany</td><td>17</td><td>23</td><td>23</td></tr><tr><td>belgium</td><td>18</td><td>19</td><td>16</td></tr><tr><td>minimum</td><td>11</td><td>13</td><td>12</td></tr><tr><td>maximum</td><td>30</td><td>26</td><td>29</td></tr><tr><td>variance</td><td>28.13</td><td>11.56</td><td>19.14</td></tr><tr><td>standard deviation</td><td>5.30</td><td>3.40</td><td>4.37</td></tr><tr><td>totals</td><td>258</td><td>244</td><td>230</td></tr></table>
 <div id="Qualification_graph_container" style="width: 480px; height: 400px;">
                   </div>
 
       <script>
       var trace_tomato_plan = {
-  x: ['australia', 'bahrain', 'china', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria', 'great-britain', 'hungary', 'germany'],
-  y: [27, 49, 66, 81, 97, 124, 154, 165, 181, 201, 223, 240],
+  x: ['australia', 'bahrain', 'china', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria', 'great-britain', 'hungary', 'germany', 'belgium'],
+  y: [27, 49, 66, 81, 97, 124, 154, 165, 181, 201, 223, 240, 258],
   mode: 'lines+markers',
   name: 'tomato_plan'
 };var trace_jdanielp = {
-  x: ['australia', 'bahrain', 'china', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria', 'great-britain', 'hungary', 'germany'],
-  y: [20, 40, 57, 78, 94, 112, 132, 145, 159, 185, 202, 225],
+  x: ['australia', 'bahrain', 'china', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria', 'great-britain', 'hungary', 'germany', 'belgium'],
+  y: [20, 40, 57, 78, 94, 112, 132, 145, 159, 185, 202, 225, 244],
   mode: 'lines+markers',
   name: 'jdanielp'
 };var trace_Seneska = {
-  x: ['australia', 'bahrain', 'china', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria', 'great-britain', 'hungary', 'germany'],
-  y: [20, 37, 50, 67, 82, 96, 125, 141, 159, 179, 191, 214],
+  x: ['australia', 'bahrain', 'china', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria', 'great-britain', 'hungary', 'germany', 'belgium'],
+  y: [20, 37, 50, 67, 82, 96, 125, 141, 159, 179, 191, 214, 230],
   mode: 'lines+markers',
   name: 'Seneska'
 };
@@ -39,24 +39,24 @@
     Plotly.newPlot('Qualification_graph_container', data, layout);
       </script>
 
-<h2>Race</h2><table><tr><th>Location</th><th>Allan</th><th>Dan</th><th>Charlotte</th></tr><tr><td>australia</td><td>13</td><td>11</td><td>15</td></tr><tr><td>bahrain</td><td>8</td><td>10</td><td>16</td></tr><tr><td>china</td><td>17</td><td>17</td><td>18</td></tr><tr><td>russia</td><td>12</td><td>15</td><td>15</td></tr><tr><td>spain</td><td>8</td><td>14</td><td>9</td></tr><tr><td>monaco</td><td>12</td><td>21</td><td>11</td></tr><tr><td>canada</td><td>18</td><td>21</td><td>16</td></tr><tr><td>azerbaijan</td><td>27</td><td>19</td><td>23</td></tr><tr><td>austria</td><td>17</td><td>14</td><td>12</td></tr><tr><td>great-britain</td><td>13</td><td>13</td><td>19</td></tr><tr><td>hungary</td><td>21</td><td>22</td><td>17</td></tr><tr><td>germany</td><td>15</td><td>16</td><td>15</td></tr><tr><td>minimum</td><td>8</td><td>10</td><td>9</td></tr><tr><td>maximum</td><td>27</td><td>22</td><td>23</td></tr><tr><td>variance</td><td>26.74</td><td>14.58</td><td>12.75</td></tr><tr><td>standard deviation</td><td>5.17</td><td>3.82</td><td>3.57</td></tr><tr><td>totals</td><td>181</td><td>193</td><td>186</td></tr></table>
+<h2>Race</h2><table><tr><th>Location</th><th>Allan</th><th>Dan</th><th>Charlotte</th></tr><tr><td>australia</td><td>13</td><td>11</td><td>15</td></tr><tr><td>bahrain</td><td>8</td><td>10</td><td>16</td></tr><tr><td>china</td><td>17</td><td>17</td><td>18</td></tr><tr><td>russia</td><td>12</td><td>15</td><td>15</td></tr><tr><td>spain</td><td>8</td><td>14</td><td>9</td></tr><tr><td>monaco</td><td>12</td><td>21</td><td>11</td></tr><tr><td>canada</td><td>18</td><td>21</td><td>16</td></tr><tr><td>azerbaijan</td><td>27</td><td>19</td><td>23</td></tr><tr><td>austria</td><td>17</td><td>14</td><td>12</td></tr><tr><td>great-britain</td><td>13</td><td>13</td><td>19</td></tr><tr><td>hungary</td><td>21</td><td>22</td><td>17</td></tr><tr><td>germany</td><td>15</td><td>16</td><td>15</td></tr><tr><td>belgium</td><td>14</td><td>16</td><td>15</td></tr><tr><td>minimum</td><td>8</td><td>10</td><td>9</td></tr><tr><td>maximum</td><td>27</td><td>22</td><td>23</td></tr><tr><td>variance</td><td>24.77</td><td>13.46</td><td>11.79</td></tr><tr><td>standard deviation</td><td>4.98</td><td>3.67</td><td>3.43</td></tr><tr><td>totals</td><td>195</td><td>209</td><td>201</td></tr></table>
 <div id="Race_graph_container" style="width: 480px; height: 400px;">
                   </div>
 
       <script>
       var trace_tomato_plan = {
-  x: ['australia', 'bahrain', 'china', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria', 'great-britain', 'hungary', 'germany'],
-  y: [13, 21, 38, 50, 58, 70, 88, 115, 132, 145, 166, 181],
+  x: ['australia', 'bahrain', 'china', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria', 'great-britain', 'hungary', 'germany', 'belgium'],
+  y: [13, 21, 38, 50, 58, 70, 88, 115, 132, 145, 166, 181, 195],
   mode: 'lines+markers',
   name: 'tomato_plan'
 };var trace_jdanielp = {
-  x: ['australia', 'bahrain', 'china', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria', 'great-britain', 'hungary', 'germany'],
-  y: [11, 21, 38, 53, 67, 88, 109, 128, 142, 155, 177, 193],
+  x: ['australia', 'bahrain', 'china', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria', 'great-britain', 'hungary', 'germany', 'belgium'],
+  y: [11, 21, 38, 53, 67, 88, 109, 128, 142, 155, 177, 193, 209],
   mode: 'lines+markers',
   name: 'jdanielp'
 };var trace_Seneska = {
-  x: ['australia', 'bahrain', 'china', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria', 'great-britain', 'hungary', 'germany'],
-  y: [15, 31, 49, 64, 73, 84, 100, 123, 135, 154, 171, 186],
+  x: ['australia', 'bahrain', 'china', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria', 'great-britain', 'hungary', 'germany', 'belgium'],
+  y: [15, 31, 49, 64, 73, 84, 100, 123, 135, 154, 171, 186, 201],
   mode: 'lines+markers',
   name: 'Seneska'
 };
@@ -71,24 +71,24 @@
     Plotly.newPlot('Race_graph_container', data, layout);
       </script>
 
-<h2>Weekend</h2><table><tr><th>Location</th><th>Allan</th><th>Dan</th><th>Charlotte</th></tr><tr><td>australia</td><td>40</td><td>31</td><td>35</td></tr><tr><td>bahrain</td><td>30</td><td>30</td><td>33</td></tr><tr><td>china</td><td>34</td><td>34</td><td>31</td></tr><tr><td>russia</td><td>27</td><td>36</td><td>32</td></tr><tr><td>spain</td><td>24</td><td>30</td><td>24</td></tr><tr><td>monaco</td><td>39</td><td>39</td><td>25</td></tr><tr><td>canada</td><td>48</td><td>41</td><td>45</td></tr><tr><td>azerbaijan</td><td>38</td><td>32</td><td>39</td></tr><tr><td>austria</td><td>33</td><td>28</td><td>30</td></tr><tr><td>great-britain</td><td>33</td><td>39</td><td>39</td></tr><tr><td>hungary</td><td>43</td><td>39</td><td>29</td></tr><tr><td>germany</td><td>32</td><td>39</td><td>38</td></tr><tr><td>minimum</td><td>24</td><td>28</td><td>24</td></tr><tr><td>maximum</td><td>48</td><td>41</td><td>45</td></tr><tr><td>variance</td><td>42.58</td><td>18.81</td><td>34.89</td></tr><tr><td>standard deviation</td><td>6.53</td><td>4.34</td><td>5.91</td></tr><tr><td>totals</td><td>421</td><td>418</td><td>400</td></tr></table>
+<h2>Weekend</h2><table><tr><th>Location</th><th>Allan</th><th>Dan</th><th>Charlotte</th></tr><tr><td>australia</td><td>40</td><td>31</td><td>35</td></tr><tr><td>bahrain</td><td>30</td><td>30</td><td>33</td></tr><tr><td>china</td><td>34</td><td>34</td><td>31</td></tr><tr><td>russia</td><td>27</td><td>36</td><td>32</td></tr><tr><td>spain</td><td>24</td><td>30</td><td>24</td></tr><tr><td>monaco</td><td>39</td><td>39</td><td>25</td></tr><tr><td>canada</td><td>48</td><td>41</td><td>45</td></tr><tr><td>azerbaijan</td><td>38</td><td>32</td><td>39</td></tr><tr><td>austria</td><td>33</td><td>28</td><td>30</td></tr><tr><td>great-britain</td><td>33</td><td>39</td><td>39</td></tr><tr><td>hungary</td><td>43</td><td>39</td><td>29</td></tr><tr><td>germany</td><td>32</td><td>39</td><td>38</td></tr><tr><td>belgium</td><td>32</td><td>35</td><td>31</td></tr><tr><td>minimum</td><td>24</td><td>28</td><td>24</td></tr><tr><td>maximum</td><td>48</td><td>41</td><td>45</td></tr><tr><td>variance</td><td>39.98</td><td>17.36</td><td>32.59</td></tr><tr><td>standard deviation</td><td>6.32</td><td>4.17</td><td>5.71</td></tr><tr><td>totals</td><td>453</td><td>453</td><td>431</td></tr></table>
 <div id="Weekend_graph_container" style="width: 480px; height: 400px;">
                   </div>
 
       <script>
       var trace_tomato_plan = {
-  x: ['australia', 'bahrain', 'china', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria', 'great-britain', 'hungary', 'germany'],
-  y: [40, 70, 104, 131, 155, 194, 242, 280, 313, 346, 389, 421],
+  x: ['australia', 'bahrain', 'china', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria', 'great-britain', 'hungary', 'germany', 'belgium'],
+  y: [40, 70, 104, 131, 155, 194, 242, 280, 313, 346, 389, 421, 453],
   mode: 'lines+markers',
   name: 'tomato_plan'
 };var trace_jdanielp = {
-  x: ['australia', 'bahrain', 'china', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria', 'great-britain', 'hungary', 'germany'],
-  y: [31, 61, 95, 131, 161, 200, 241, 273, 301, 340, 379, 418],
+  x: ['australia', 'bahrain', 'china', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria', 'great-britain', 'hungary', 'germany', 'belgium'],
+  y: [31, 61, 95, 131, 161, 200, 241, 273, 301, 340, 379, 418, 453],
   mode: 'lines+markers',
   name: 'jdanielp'
 };var trace_Seneska = {
-  x: ['australia', 'bahrain', 'china', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria', 'great-britain', 'hungary', 'germany'],
-  y: [35, 68, 99, 131, 155, 180, 225, 264, 294, 333, 362, 400],
+  x: ['australia', 'bahrain', 'china', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria', 'great-britain', 'hungary', 'germany', 'belgium'],
+  y: [35, 68, 99, 131, 155, 180, 225, 264, 294, 333, 362, 400, 431],
   mode: 'lines+markers',
   name: 'Seneska'
 };
