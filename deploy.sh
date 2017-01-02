@@ -14,4 +14,5 @@ python main.py &&
 git add index.html &&
 git commit -m "Latest build and commit to gh-pages" &&
 git push origin gh-pages &&
-git checkout master
+git checkout master &&
+echo "Visit: https://allanderek.github.io/guess-the-grid-scraper/"
