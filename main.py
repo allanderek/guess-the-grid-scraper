@@ -53,7 +53,7 @@ def create_graph_javascript(container_name, title, traces):
     graph_javascript_template = """
       <script>
       {}
-    var data = [ trace_tomato_plan, trace_jdanielp, trace_Seneska ];
+    var data = [ trace_tomato_plan, trace_jdanielp, trace_Seneska, trace_McPoleface ];
     
     var layout = {{
       title:'{}',
@@ -79,14 +79,14 @@ def create_table(headers, rows):
 
 def main():
     data_file = 'leaderboard.html'
-    leaderboard_url = 'http://guessthegrid.com/2016'
+    leaderboard_url = 'http://guessthegrid.com/2017'
 
     download_if_stale(data_file, leaderboard_url)
 
     with open(data_file, 'r') as leaderboard_file:
         soup = BeautifulSoup(leaderboard_file, 'html.parser')
     
-    player_names = ['tomato_plan', 'Seneska', 'jdanielp']
+    player_names = ['tomato_plan', 'Seneska', 'jdanielp', 'McPoleface']
     # For now we just assume that for each race there are two scores for each
     # player. If we get to the point where someone has missed one, that should
     # not be a problem, inside each race well there should be two ordered lists
@@ -166,9 +166,10 @@ def main():
 
 
     def make_graph(name, index):
-        graph_traces = "{}{}{}".format(get_trace(index, 'tomato_plan'),
+        graph_traces = "{}{}{}{}".format(get_trace(index, 'tomato_plan'),
                                        get_trace(index, 'jdanielp'),
-                                       get_trace(index, 'Seneska'))
+                                       get_trace(index, 'Seneska'),
+                                       get_trace(index, 'McPoleface'))
         container_name = "{}_graph_container".format(name)
         title = "{} points graph".format(name)
         javascript = create_graph_javascript(container_name, title, graph_traces)
@@ -179,7 +180,7 @@ def main():
     tables = []
     
     def make_column_table(name, column):
-        headers = ['Location', 'Allan', 'Dan', 'Charlotte']
+        headers = ['Location', 'Allan', 'Dan', 'Charlotte', 'Joost']
         def make_row(name, race_dictionary):
             def format_number(number):
                 if isinstance(number, float):
@@ -188,7 +189,8 @@ def main():
                     return number
             return [name, format_number(race_dictionary['tomato_plan'][column]),
                           format_number(race_dictionary['jdanielp'][column]),
-                          format_number(race_dictionary['Seneska'][column])]
+                          format_number(race_dictionary['Seneska'][column]),
+                          format_number(race_dictionary['McPoleface'][column])]
         rows = [make_row(n,d) for n,d in race_dictionaries]
         table = create_table(headers, rows)
         return make_tag('h2', name) + table
