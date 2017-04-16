@@ -35,6 +35,12 @@ def download_if_stale(filepath, fileurl):
         except urllib.error.HTTPError:
             print('The {0} is not reachable'.format(fileurl))
 
+page_css = """
+.table-graph-pair{
+    display: flex;
+    flex-direction: row;
+}
+"""
 html_template = """
 <!DOCTYPE html>
 <html>
@@ -42,6 +48,9 @@ html_template = """
 <title>Guess the Grid Statistics</title>
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/picnicss/6.0.0/picnic.min.css" crossorigin="anonymous">
  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<style>
+{}
+</style>
 </head>
 <body>
 {}
@@ -193,14 +202,17 @@ def main():
                           format_number(race_dictionary['McPoleface'][column])]
         rows = [make_row(n,d) for n,d in race_dictionaries]
         table = create_table(headers, rows)
-        return make_tag('h2', name) + table
+        return table
 
     for n,c in [('Qualification', 0), ('Race', 1), ('Weekend', 2)]:
-        tables.append(make_column_table(n,c))
-        tables.append(make_graph(n, c))
+        table = make_column_table(n, c)
+        graph = make_graph(n, c)
+        pair = '<div class="table-graph-pair">{}\n{}</div>'.format(table, graph)
+        pair_and_title = make_tag('h2', n) + pair 
+        tables.append(pair_and_title)
 
     tables_html = "\n".join(tables)
-    html = html_template.format(tables_html)
+    html = html_template.format(page_css, tables_html)
     with open('index.html', 'w') as output_file:
         output_file.write(html)
 
