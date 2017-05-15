@@ -7,6 +7,18 @@ import math
 from bs4 import BeautifulSoup
 import jinja2
 
+class Player(object):
+    def __init__(self, real_name, user_name):
+        self.real_name = real_name
+        self.user_name = user_name
+
+players = [
+    Player('Allan', 'tomato_plan'),
+    Player('Dan', 'jdanielp'),
+    Player('Charlotte', 'Seneska'),
+    Player('Joost', 'McPoleface')
+    ]
+
 def last_modified_date(filepath):
     modification_timestamp = os.path.getmtime(filepath)
     modification_date = datetime.date.fromtimestamp(modification_timestamp)
@@ -95,7 +107,6 @@ def main():
     with open(data_file, 'r') as leaderboard_file:
         soup = BeautifulSoup(leaderboard_file, 'html.parser')
     
-    player_names = ['tomato_plan', 'Seneska', 'jdanielp', 'McPoleface']
     # For now we just assume that for each race there are two scores for each
     # player. If we get to the point where someone has missed one, that should
     # not be a problem, inside each race well there should be two ordered lists
@@ -106,31 +117,32 @@ def main():
     def points_for_race(race_title):
         race_well = race_title.parent.parent
         race_links = race_well.find_all('a')
-        def points_for_player(player_name):
+        def points_for_player(player):
             def points_from_link(link):
                 return int(link.parent.find('span').text)
             qualifying, race = [points_from_link(l) for l in race_links
-                                if l.text == player_name]
+                                if l.text == player.user_name]
             return qualifying, race, qualifying + race
-        return {n: points_for_player(n) for n in player_names}
+        return {n.user_name: points_for_player(n) for n in players}
 
     race_titles = soup.find_all('h3', class_='pull-left')
     race_dictionaries = [(r['id'], points_for_race(r)) for r in race_titles]
 
+
     # For each player create a list of qualifying and race scores so that I can
     # easily produce the summation tables, such as total, variance max, min, sd.
-    point_lists = { player: ([d[player][0] for _n, d in race_dictionaries],
-                             [d[player][1] for _n, d in race_dictionaries],
-                             [d[player][2] for _n, d in race_dictionaries])
-                    for player in player_names }
+    point_lists = { p.user_name: ([d[p.user_name][0] for _n, d in race_dictionaries],
+                             [d[p.user_name][1] for _n, d in race_dictionaries],
+                             [d[p.user_name][2] for _n, d in race_dictionaries])
+                    for p in players }
                              
     
     def summation_rows(row_name, sum_function):
         def get_summations(player):
-            return (sum_function(point_lists[player][0]),
-                    sum_function(point_lists[player][1]),
-                    sum_function(point_lists[player][2]))
-        return (row_name, {n: get_summations(n) for n in player_names})
+            return (sum_function(point_lists[player.user_name][0]),
+                    sum_function(point_lists[player.user_name][1]),
+                    sum_function(point_lists[player.user_name][2]))
+        return (row_name, {n.user_name: get_summations(n) for n in players})
 
 
     def get_average(numbers):
@@ -164,21 +176,18 @@ def main():
     _name, cumulative_rows = summation_rows('cumulative', cumulation)
     race_names = [r['id'] for r in race_titles]
     x_of_trace = "x: {}".format(str(race_names))
-    def get_trace(index, player_name):
-        y_of_trace = cumulative_rows[player_name][index]
+    def get_trace(index, player):
+        y_of_trace = cumulative_rows[player.user_name][index]
         return """var trace_{} = {{
   {},
   y: {},
   mode: 'lines+markers',
   name: '{}'
-}};""".format(player_name, x_of_trace, y_of_trace, player_name)
+}};""".format(player.user_name, x_of_trace, y_of_trace, player.real_name)
 
 
     def make_graph(name, index):
-        graph_traces = "{}{}{}{}".format(get_trace(index, 'tomato_plan'),
-                                       get_trace(index, 'jdanielp'),
-                                       get_trace(index, 'Seneska'),
-                                       get_trace(index, 'McPoleface'))
+        graph_traces = "\n".join([get_trace(index, player) for player in players])
         container_name = "{}_graph_container".format(name)
         title = "{} points graph".format(name)
         javascript = create_graph_javascript(container_name, title, graph_traces)
@@ -189,17 +198,14 @@ def main():
     tables = []
     
     def make_column_table(name, column):
-        headers = ['Location', 'Allan', 'Dan', 'Charlotte', 'Joost']
+        headers = ['Location'] + [p.real_name for p in players]
         def make_row(name, race_dictionary):
             def format_number(number):
                 if isinstance(number, float):
                     return "{:03.2f}".format(number)
                 else:
                     return number
-            return [name, format_number(race_dictionary['tomato_plan'][column]),
-                          format_number(race_dictionary['jdanielp'][column]),
-                          format_number(race_dictionary['Seneska'][column]),
-                          format_number(race_dictionary['McPoleface'][column])]
+            return [name] + [format_number(race_dictionary[p.user_name][column]) for p in players]
         rows = [make_row(n,d) for n,d in race_dictionaries]
         table = create_table(headers, rows)
         return table
