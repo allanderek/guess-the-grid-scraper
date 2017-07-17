@@ -15,32 +15,32 @@
 </style>
 </head>
 <body>
-<h2>Qualification</h2><div class="table-graph-pair"><table><tr><th>Location</th><th>Allan</th><th>Dan</th><th>Charlotte</th><th>Joost</th></tr><tr><td>australia</td><td>21</td><td>22</td><td>21</td><td>20</td></tr><tr><td>china</td><td>14</td><td>15</td><td>22</td><td>20</td></tr><tr><td>bahrain</td><td>13</td><td>13</td><td>15</td><td>18</td></tr><tr><td>russia</td><td>18</td><td>25</td><td>17</td><td>25</td></tr><tr><td>spain</td><td>19</td><td>19</td><td>20</td><td>23</td></tr><tr><td>monaco</td><td>12</td><td>15</td><td>17</td><td>13</td></tr><tr><td>canada</td><td>26</td><td>23</td><td>20</td><td>17</td></tr><tr><td>azerbaijan</td><td>20</td><td>22</td><td>11</td><td>23</td></tr><tr><td>austria</td><td>12</td><td>19</td><td>18</td><td>19</td></tr><tr><td>minimum</td><td>12</td><td>13</td><td>11</td><td>13</td></tr><tr><td>maximum</td><td>26</td><td>25</td><td>22</td><td>25</td></tr><tr><td>variance</td><td>20.62</td><td>15.28</td><td>10.32</td><td>11.73</td></tr><tr><td>standard deviation</td><td>4.54</td><td>3.91</td><td>3.21</td><td>3.42</td></tr><tr><td>totals</td><td>155</td><td>173</td><td>161</td><td>178</td></tr></table>
+<h2>Qualification</h2><div class="table-graph-pair"><table><tr><th>Location</th><th>Allan</th><th>Dan</th><th>Charlotte</th><th>Joost</th></tr><tr><td>australia</td><td>21</td><td>22</td><td>21</td><td>20</td></tr><tr><td>china</td><td>14</td><td>15</td><td>22</td><td>20</td></tr><tr><td>bahrain</td><td>13</td><td>13</td><td>15</td><td>18</td></tr><tr><td>russia</td><td>18</td><td>25</td><td>17</td><td>25</td></tr><tr><td>spain</td><td>19</td><td>19</td><td>20</td><td>23</td></tr><tr><td>monaco</td><td>12</td><td>15</td><td>17</td><td>13</td></tr><tr><td>canada</td><td>26</td><td>23</td><td>20</td><td>17</td></tr><tr><td>azerbaijan</td><td>20</td><td>22</td><td>11</td><td>23</td></tr><tr><td>austria</td><td>12</td><td>19</td><td>18</td><td>19</td></tr><tr><td>great-britain</td><td>15</td><td>17</td><td>16</td><td>18</td></tr><tr><td>minimum</td><td>12</td><td>13</td><td>11</td><td>13</td></tr><tr><td>maximum</td><td>26</td><td>25</td><td>22</td><td>25</td></tr><tr><td>variance</td><td>19.00</td><td>14.20</td><td>9.61</td><td>10.84</td></tr><tr><td>standard deviation</td><td>4.36</td><td>3.77</td><td>3.10</td><td>3.29</td></tr><tr><td>totals</td><td>170</td><td>190</td><td>177</td><td>196</td></tr></table>
 <div id="Qualification_graph_container" style="width: 480px; height: 400px;">
                   </div>
 
       <script>
       var trace_tomato_plan = {
-  x: ['australia', 'china', 'bahrain', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria'],
-  y: [21, 35, 48, 66, 85, 97, 123, 143, 155],
+  x: ['australia', 'china', 'bahrain', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria', 'great-britain'],
+  y: [21, 35, 48, 66, 85, 97, 123, 143, 155, 170],
   mode: 'lines+markers',
   name: 'Allan'
 };
 var trace_jdanielp = {
-  x: ['australia', 'china', 'bahrain', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria'],
-  y: [22, 37, 50, 75, 94, 109, 132, 154, 173],
+  x: ['australia', 'china', 'bahrain', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria', 'great-britain'],
+  y: [22, 37, 50, 75, 94, 109, 132, 154, 173, 190],
   mode: 'lines+markers',
   name: 'Dan'
 };
 var trace_Seneska = {
-  x: ['australia', 'china', 'bahrain', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria'],
-  y: [21, 43, 58, 75, 95, 112, 132, 143, 161],
+  x: ['australia', 'china', 'bahrain', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria', 'great-britain'],
+  y: [21, 43, 58, 75, 95, 112, 132, 143, 161, 177],
   mode: 'lines+markers',
   name: 'Charlotte'
 };
 var trace_McPoleface = {
-  x: ['australia', 'china', 'bahrain', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria'],
-  y: [20, 40, 58, 83, 106, 119, 136, 159, 178],
+  x: ['australia', 'china', 'bahrain', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria', 'great-britain'],
+  y: [20, 40, 58, 83, 106, 119, 136, 159, 178, 196],
   mode: 'lines+markers',
   name: 'Joost'
 };
@@ -55,32 +55,32 @@ var trace_McPoleface = {
     Plotly.newPlot('Qualification_graph_container', data, layout);
       </script>
 </div>
-<h2>Race</h2><div class="table-graph-pair"><table><tr><th>Location</th><th>Allan</th><th>Dan</th><th>Charlotte</th><th>Joost</th></tr><tr><td>australia</td><td>22</td><td>21</td><td>21</td><td>14</td></tr><tr><td>china</td><td>12</td><td>17</td><td>19</td><td>15</td></tr><tr><td>bahrain</td><td>14</td><td>17</td><td>16</td><td>15</td></tr><tr><td>russia</td><td>10</td><td>14</td><td>14</td><td>19</td></tr><tr><td>spain</td><td>10</td><td>10</td><td>12</td><td>12</td></tr><tr><td>monaco</td><td>20</td><td>18</td><td>16</td><td>20</td></tr><tr><td>canada</td><td>8</td><td>14</td><td>12</td><td>13</td></tr><tr><td>azerbaijan</td><td>10</td><td>12</td><td>10</td><td>12</td></tr><tr><td>austria</td><td>15</td><td>19</td><td>22</td><td>17</td></tr><tr><td>minimum</td><td>8</td><td>10</td><td>10</td><td>12</td></tr><tr><td>maximum</td><td>22</td><td>21</td><td>22</td><td>20</td></tr><tr><td>variance</td><td>20.69</td><td>11.06</td><td>15.73</td><td>7.51</td></tr><tr><td>standard deviation</td><td>4.55</td><td>3.33</td><td>3.97</td><td>2.74</td></tr><tr><td>totals</td><td>121</td><td>142</td><td>142</td><td>137</td></tr></table>
+<h2>Race</h2><div class="table-graph-pair"><table><tr><th>Location</th><th>Allan</th><th>Dan</th><th>Charlotte</th><th>Joost</th></tr><tr><td>australia</td><td>22</td><td>21</td><td>21</td><td>14</td></tr><tr><td>china</td><td>12</td><td>17</td><td>19</td><td>15</td></tr><tr><td>bahrain</td><td>14</td><td>17</td><td>16</td><td>15</td></tr><tr><td>russia</td><td>10</td><td>14</td><td>14</td><td>19</td></tr><tr><td>spain</td><td>10</td><td>10</td><td>12</td><td>12</td></tr><tr><td>monaco</td><td>20</td><td>18</td><td>16</td><td>20</td></tr><tr><td>canada</td><td>8</td><td>14</td><td>12</td><td>13</td></tr><tr><td>azerbaijan</td><td>10</td><td>12</td><td>10</td><td>12</td></tr><tr><td>austria</td><td>15</td><td>19</td><td>22</td><td>17</td></tr><tr><td>great-britain</td><td>16</td><td>24</td><td>18</td><td>21</td></tr><tr><td>minimum</td><td>8</td><td>10</td><td>10</td><td>12</td></tr><tr><td>maximum</td><td>22</td><td>24</td><td>22</td><td>21</td></tr><tr><td>variance</td><td>19.21</td><td>16.04</td><td>14.60</td><td>9.76</td></tr><tr><td>standard deviation</td><td>4.38</td><td>4.00</td><td>3.82</td><td>3.12</td></tr><tr><td>totals</td><td>137</td><td>166</td><td>160</td><td>158</td></tr></table>
 <div id="Race_graph_container" style="width: 480px; height: 400px;">
                   </div>
 
       <script>
       var trace_tomato_plan = {
-  x: ['australia', 'china', 'bahrain', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria'],
-  y: [22, 34, 48, 58, 68, 88, 96, 106, 121],
+  x: ['australia', 'china', 'bahrain', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria', 'great-britain'],
+  y: [22, 34, 48, 58, 68, 88, 96, 106, 121, 137],
   mode: 'lines+markers',
   name: 'Allan'
 };
 var trace_jdanielp = {
-  x: ['australia', 'china', 'bahrain', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria'],
-  y: [21, 38, 55, 69, 79, 97, 111, 123, 142],
+  x: ['australia', 'china', 'bahrain', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria', 'great-britain'],
+  y: [21, 38, 55, 69, 79, 97, 111, 123, 142, 166],
   mode: 'lines+markers',
   name: 'Dan'
 };
 var trace_Seneska = {
-  x: ['australia', 'china', 'bahrain', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria'],
-  y: [21, 40, 56, 70, 82, 98, 110, 120, 142],
+  x: ['australia', 'china', 'bahrain', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria', 'great-britain'],
+  y: [21, 40, 56, 70, 82, 98, 110, 120, 142, 160],
   mode: 'lines+markers',
   name: 'Charlotte'
 };
 var trace_McPoleface = {
-  x: ['australia', 'china', 'bahrain', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria'],
-  y: [14, 29, 44, 63, 75, 95, 108, 120, 137],
+  x: ['australia', 'china', 'bahrain', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria', 'great-britain'],
+  y: [14, 29, 44, 63, 75, 95, 108, 120, 137, 158],
   mode: 'lines+markers',
   name: 'Joost'
 };
@@ -95,32 +95,32 @@ var trace_McPoleface = {
     Plotly.newPlot('Race_graph_container', data, layout);
       </script>
 </div>
-<h2>Weekend</h2><div class="table-graph-pair"><table><tr><th>Location</th><th>Allan</th><th>Dan</th><th>Charlotte</th><th>Joost</th></tr><tr><td>australia</td><td>43</td><td>43</td><td>42</td><td>34</td></tr><tr><td>china</td><td>26</td><td>32</td><td>41</td><td>35</td></tr><tr><td>bahrain</td><td>27</td><td>30</td><td>31</td><td>33</td></tr><tr><td>russia</td><td>28</td><td>39</td><td>31</td><td>44</td></tr><tr><td>spain</td><td>29</td><td>29</td><td>32</td><td>35</td></tr><tr><td>monaco</td><td>32</td><td>33</td><td>33</td><td>33</td></tr><tr><td>canada</td><td>34</td><td>37</td><td>32</td><td>30</td></tr><tr><td>azerbaijan</td><td>30</td><td>34</td><td>21</td><td>35</td></tr><tr><td>austria</td><td>27</td><td>38</td><td>40</td><td>36</td></tr><tr><td>minimum</td><td>26</td><td>29</td><td>21</td><td>30</td></tr><tr><td>maximum</td><td>43</td><td>43</td><td>42</td><td>44</td></tr><tr><td>variance</td><td>24.89</td><td>18.67</td><td>38.22</td><td>12.89</td></tr><tr><td>standard deviation</td><td>4.99</td><td>4.32</td><td>6.18</td><td>3.59</td></tr><tr><td>totals</td><td>276</td><td>315</td><td>303</td><td>315</td></tr></table>
+<h2>Weekend</h2><div class="table-graph-pair"><table><tr><th>Location</th><th>Allan</th><th>Dan</th><th>Charlotte</th><th>Joost</th></tr><tr><td>australia</td><td>43</td><td>43</td><td>42</td><td>34</td></tr><tr><td>china</td><td>26</td><td>32</td><td>41</td><td>35</td></tr><tr><td>bahrain</td><td>27</td><td>30</td><td>31</td><td>33</td></tr><tr><td>russia</td><td>28</td><td>39</td><td>31</td><td>44</td></tr><tr><td>spain</td><td>29</td><td>29</td><td>32</td><td>35</td></tr><tr><td>monaco</td><td>32</td><td>33</td><td>33</td><td>33</td></tr><tr><td>canada</td><td>34</td><td>37</td><td>32</td><td>30</td></tr><tr><td>azerbaijan</td><td>30</td><td>34</td><td>21</td><td>35</td></tr><tr><td>austria</td><td>27</td><td>38</td><td>40</td><td>36</td></tr><tr><td>great-britain</td><td>31</td><td>41</td><td>34</td><td>39</td></tr><tr><td>minimum</td><td>26</td><td>29</td><td>21</td><td>30</td></tr><tr><td>maximum</td><td>43</td><td>43</td><td>42</td><td>44</td></tr><tr><td>variance</td><td>22.41</td><td>20.04</td><td>34.41</td><td>13.04</td></tr><tr><td>standard deviation</td><td>4.73</td><td>4.48</td><td>5.87</td><td>3.61</td></tr><tr><td>totals</td><td>307</td><td>356</td><td>337</td><td>354</td></tr></table>
 <div id="Weekend_graph_container" style="width: 480px; height: 400px;">
                   </div>
 
       <script>
       var trace_tomato_plan = {
-  x: ['australia', 'china', 'bahrain', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria'],
-  y: [43, 69, 96, 124, 153, 185, 219, 249, 276],
+  x: ['australia', 'china', 'bahrain', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria', 'great-britain'],
+  y: [43, 69, 96, 124, 153, 185, 219, 249, 276, 307],
   mode: 'lines+markers',
   name: 'Allan'
 };
 var trace_jdanielp = {
-  x: ['australia', 'china', 'bahrain', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria'],
-  y: [43, 75, 105, 144, 173, 206, 243, 277, 315],
+  x: ['australia', 'china', 'bahrain', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria', 'great-britain'],
+  y: [43, 75, 105, 144, 173, 206, 243, 277, 315, 356],
   mode: 'lines+markers',
   name: 'Dan'
 };
 var trace_Seneska = {
-  x: ['australia', 'china', 'bahrain', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria'],
-  y: [42, 83, 114, 145, 177, 210, 242, 263, 303],
+  x: ['australia', 'china', 'bahrain', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria', 'great-britain'],
+  y: [42, 83, 114, 145, 177, 210, 242, 263, 303, 337],
   mode: 'lines+markers',
   name: 'Charlotte'
 };
 var trace_McPoleface = {
-  x: ['australia', 'china', 'bahrain', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria'],
-  y: [34, 69, 102, 146, 181, 214, 244, 279, 315],
+  x: ['australia', 'china', 'bahrain', 'russia', 'spain', 'monaco', 'canada', 'azerbaijan', 'austria', 'great-britain'],
+  y: [34, 69, 102, 146, 181, 214, 244, 279, 315, 354],
   mode: 'lines+markers',
   name: 'Joost'
 };
